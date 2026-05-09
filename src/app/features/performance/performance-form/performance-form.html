@@ -1,0 +1,53 @@
+<div class="performance-form-container">
+
+  <h2>
+    {{ selectedPerformance ? 'Edit Performance Review' : 'Add Performance Review' }}
+  </h2>
+
+  <form
+    [formGroup]="performanceForm"
+    (ngSubmit)="onSubmit()"
+  >
+
+    <div class="form-grid">
+
+      <input
+        type="text"
+        placeholder="Employee Name"
+        formControlName="employeeName"
+      />
+
+      <select formControlName="rating">
+        <option [value]="1">1 - Poor</option>
+        <option [value]="2">2 - Fair</option>
+        <option [value]="3">3 - Good</option>
+        <option [value]="4">4 - Very Good</option>
+        <option [value]="5">5 - Excellent</option>
+      </select>
+
+      <input
+        type="text"
+        placeholder="Reviewer Name"
+        formControlName="reviewer"
+      />
+
+      <input
+        type="date"
+        formControlName="reviewDate"
+      />
+
+      <textarea
+        placeholder="Comments"
+        formControlName="comments"
+        rows="4"
+      ></textarea>
+
+    </div>
+
+    <button type="submit">
+      {{ selectedPerformance ? 'Update Review' : 'Add Review' }}
+    </button>
+
+  </form>
+
+</div>

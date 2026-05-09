@@ -1,0 +1,102 @@
+<div class="employee-page">
+
+  <app-employee-form></app-employee-form>
+
+  <!-- Search / Filter / Sort -->
+  <div class="controls-container">
+
+    <input
+      type="text"
+      placeholder="Search by employee name"
+      [ngModel]="searchTerm()"
+      (ngModelChange)="updateSearch($event)"
+    />
+
+    <select
+      [ngModel]="selectedStatus()"
+      (ngModelChange)="updateStatus($event)"
+    >
+      <option value="All">All Status</option>
+      <option value="Active">Active</option>
+      <option value="Inactive">Inactive</option>
+    </select>
+
+    <select
+      [ngModel]="sortOrder()"
+      (ngModelChange)="updateSort($event)"
+    >
+      <option value="None">Sort by Salary</option>
+      <option value="Ascending">Salary: Low to High</option>
+      <option value="Descending">Salary: High to Low</option>
+    </select>
+
+  </div>
+
+  <!-- Employee Table -->
+  <div class="table-container">
+
+    <h2>Employees List</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Department</th>
+          <th>Role</th>
+          <th>Salary</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let emp of paginatedEmployees()">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.email }}</td>
+          <td>{{ emp.department }}</td>
+          <td>{{ emp.role }}</td>
+          <td>{{ emp.salary }}</td>
+          <td>{{ emp.status }}</td>
+          <td>
+            <button
+              class="delete-btn"
+              (click)="deleteEmployee(emp.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <!-- Pagination -->
+    <div class="pagination">
+
+      <button
+        (click)="previousPage()"
+        [disabled]="currentPage() === 1"
+      >
+        Previous
+      </button>
+
+      <span>
+        Page {{ currentPage() }} of {{ totalPages() }}
+      </span>
+
+      <button
+        (click)="nextPage()"
+        [disabled]="currentPage() === totalPages()"
+      >
+        Next
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,65 @@
+<div class="employee-form-container">
+
+
+  <form
+    [formGroup]="employeeForm"
+    (ngSubmit)="addEmployee()"
+  >
+
+    <div class="form-grid">
+
+      <input
+        type="text"
+        placeholder="Employee Name"
+        formControlName="name"
+      />
+
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+      />
+
+      <input
+        type="text"
+        placeholder="Department"
+        formControlName="department"
+      />
+
+      <input
+        type="text"
+        placeholder="Role"
+        formControlName="role"
+      />
+
+      <input
+        type="number"
+        placeholder="Salary"
+        formControlName="salary"
+      />
+
+      <select formControlName="status">
+
+  <option value="">
+    Select Status
+  </option>
+
+  <option value="Active">
+    Active
+  </option>
+
+  <option value="Inactive">
+    Inactive
+  </option>
+
+</select>
+
+    </div>
+
+    <button type="submit">
+      Add Employee
+    </button>
+
+  </form>
+
+</div>

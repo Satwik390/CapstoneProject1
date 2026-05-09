@@ -1,0 +1,55 @@
+<div class="attendance-form-container">
+
+  <h2>
+    {{
+      selectedAttendance
+      ? 'Edit Attendance'
+      : 'Add Attendance'
+    }}
+  </h2>
+
+  <form
+    [formGroup]="attendanceForm"
+    (ngSubmit)="onSubmit()"
+  >
+
+    <input
+      type="text"
+      placeholder="Employee Name"
+      formControlName="employeeName"
+    />
+
+    <input
+      type="date"
+      formControlName="date"
+    />
+
+    <select formControlName="status">
+
+      <option value="">
+        Select Status
+      </option>
+
+      <option value="Present">
+        Present
+      </option>
+
+      <option value="Absent">
+        Absent
+      </option>
+
+    </select>
+
+    <button type="submit">
+
+      {{
+        selectedAttendance
+        ? 'Update Attendance'
+        : 'Add Attendance'
+      }}
+
+    </button>
+
+  </form>
+
+</div>

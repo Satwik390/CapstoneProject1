@@ -1,0 +1,63 @@
+<div class="performance-page">
+
+  <app-performance-form
+    [selectedPerformance]="selectedPerformance()"
+    (clearEdit)="clearEdit()"
+  ></app-performance-form>
+
+  <div class="table-container">
+
+    <h2>Performance Reviews</h2>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Employee</th>
+          <th>Rating</th>
+          <th>Reviewer</th>
+          <th>Review Date</th>
+          <th>Comments</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let review of performance()">
+
+          <td>{{ review.id }}</td>
+          <td>{{ review.employeeName }}</td>
+          <td>{{ review.rating }}/5</td>
+          <td>{{ review.reviewer }}</td>
+          <td>{{ review.reviewDate }}</td>
+          <td>{{ review.comments }}</td>
+
+          <td>
+
+            <button
+              class="edit-btn"
+              (click)="editPerformance(review)"
+            >
+              Edit
+            </button>
+
+            <button
+              class="delete-btn"
+              (click)="deletePerformance(review.id)"
+            >
+              Delete
+            </button>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

@@ -1,0 +1,35 @@
+<div class="form-container">
+
+  <h2>Add Department</h2>
+
+  <form
+    [formGroup]="departmentForm"
+    (ngSubmit)="onSubmit()">
+
+    <input
+      type="text"
+      placeholder="Department Name"
+      formControlName="name"
+    />
+
+    <input
+      type="text"
+      placeholder="Manager Name"
+      formControlName="manager"
+    />
+
+    <input
+      type="number"
+      placeholder="Employee Count"
+      formControlName="employeeCount"
+    />
+
+    <button type="submit">
+
+      Save Department
+
+    </button>
+
+  </form>
+
+</div>

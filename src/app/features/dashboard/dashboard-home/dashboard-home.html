@@ -1,0 +1,56 @@
+<div class="dashboard">
+
+  <h1>Enterprise Employee Management System</h1>
+
+  <div class="cards">
+
+    <div class="card">
+      <h2>Total Employees</h2>
+      <p>{{ totalEmployees() }}</p>
+    </div>
+
+    <div class="card">
+      <h2>Active Employees</h2>
+      <p>{{ activeEmployees() }}</p>
+    </div>
+
+    <div class="card">
+      <h2>Total Salary</h2>
+      <p>{{ totalSalary() }}</p>
+    </div>
+
+  </div>
+
+  <div class="table-container">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Role</th>
+          <th>Salary</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let emp of employees()">
+
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.department }}</td>
+          <td>{{ emp.role }}</td>
+          <td>{{ emp.salary }}</td>
+          <td>{{ emp.status }}</td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

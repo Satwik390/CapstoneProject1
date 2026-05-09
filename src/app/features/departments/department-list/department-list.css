@@ -1,0 +1,50 @@
+.department-page {
+
+  padding: 30px;
+
+}
+
+table {
+
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+
+}
+
+th {
+
+  background: #1976d2;
+  color: white;
+  padding: 14px;
+
+}
+
+td {
+
+  padding: 12px;
+  border: 1px solid #ddd;
+
+}
+
+button {
+
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+
+}
+
+.edit-btn {
+
+  background: orange;
+  margin-right: 10px;
+
+}
+
+.delete-btn {
+
+  background: red;
+
+}

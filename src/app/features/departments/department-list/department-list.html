@@ -1,0 +1,57 @@
+<div class="department-page">
+
+  <h1>Departments Management</h1>
+
+  <app-department-form></app-department-form>
+
+  <table>
+
+    <thead>
+
+      <tr>
+
+        <th>ID</th>
+        <th>Department</th>
+        <th>Manager</th>
+        <th>Employees</th>
+        <th>Action</th>
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let dep of departments()">
+
+        <td>{{ dep.id }}</td>
+
+        <td>{{ dep.name }}</td>
+
+        <td>{{ dep.manager }}</td>
+
+        <td>{{ dep.employeeCount }}</td>
+
+        <td>
+
+          <button
+            class="edit-btn"
+            (click)="editDepartment(dep)">
+            Edit
+          </button>
+
+          <button
+            class="delete-btn"
+            (click)="deleteDepartment(dep.id)">
+            Delete
+          </button>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

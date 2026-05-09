@@ -1,0 +1,66 @@
+<div class="attendance-page">
+
+  <app-attendance-form
+    [selectedAttendance]="selectedAttendance()"
+    (clearEdit)="clearEdit()"
+  />
+
+  <div class="table-container">
+
+    <h2>Attendance Records</h2>
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>ID</th>
+          <th>Employee</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr
+          *ngFor="let att of attendance()"
+        >
+
+          <td>{{ att.id }}</td>
+
+          <td>{{ att.employeeName }}</td>
+
+          <td>{{ att.date }}</td>
+
+          <td>{{ att.status }}</td>
+
+          <td>
+
+            <button
+              class="edit-btn"
+              (click)="editAttendance(att)"
+            >
+              Edit
+            </button>
+
+            <button
+              class="delete-btn"
+              (click)="deleteAttendance(att.id)"
+            >
+              Delete
+            </button>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

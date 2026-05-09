@@ -1,0 +1,33 @@
+.form-container {
+
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+
+}
+
+form {
+
+  display: grid;
+  gap: 20px;
+
+}
+
+input {
+
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+}
+
+button {
+
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+
+}
